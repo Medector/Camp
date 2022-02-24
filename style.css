@@ -15,8 +15,6 @@ html{
 }
 
 header{
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
     width: 100%;
@@ -24,28 +22,20 @@ header{
     height: 334px;
     background-color: antiquewhite;
 }
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+
+}
 nav{
     display: flex;
     width: auto;
+    height: 50px;
     justify-content: space-between;
     align-items: flex-end;
     flex-direction: column;
     z-index: 3;
 }
-nav ul li a button{
-    width: 40px;
-    height: 30px;
-    font-size: 1rem;
-
-}
-.welcome{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-}
-
 .logo{
     cursor: pointer;
     width: 60px;
@@ -70,7 +60,6 @@ button {
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    margin-top: 5px;
 
 }
 button:hover{
@@ -90,3 +79,12 @@ nav img{
      text-align: center;
      margin-bottom: 0;
  }
+
+ .welcome{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
