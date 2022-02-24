@@ -1,5 +1,7 @@
 :root{
-    --color-white: #fff
+    --color-white: #fff;
+    --color-green-dark: rgba (30, 130, 76);, 1);
+
 }
 *{
     box-sizing: border-box;
@@ -7,55 +9,84 @@
     padding: 0;
 }
 html{
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
+    font-family:'Montserrat', sans-serif;
 
 }
-.juan{
-    width: 100px;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-}
+
 header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     position: relative;
     width: 100%;
     min-width: 320px;
     height: 334px;
     background-color: antiquewhite;
 }
-.logo{
-    height: 30px;
-    width: 50px;
-    margin-right: 50%;
-
-  
-}
-
-nav {
+nav{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    column-gap: 15px;
+    width: auto;
     justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+    z-index: 3;
 }
-nav div {
-    width: 30px;
+nav ul li a button{
+    width: 40px;
     height: 30px;
-}
-.home-icon{
-    background-color: aqua;
-}
-.search-icon{
-    background-color: brown;
-}
-.contact-icon{
-    background-color: blueviolet;
+    font-size: 1rem;
+
 }
 .welcome{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
-.header--button{
-    margin-top: 10px;
+
+.logo{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
 }
+.nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+
+}
+.nav-links li  a{
+    transition: all 0.3s ease;
+    color: orange;
+
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(255, 165,0, 1);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-top: 5px;
+
+}
+button:hover{
+    background-color: rgba(255, 165,0, 0.5);
+}
+nav img{
+    margin-top: 15px; 
+    width: 35px;
+     height: 35px;
+ }
+ nav img:hover{
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+ }
+ #icon2 a{
+     text-align: center;
+     margin-bottom: 0;
+ }
