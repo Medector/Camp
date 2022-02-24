@@ -1,0 +1,61 @@
+:root{
+    --color-white: #fff
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* font-size: 62.5%; */
+
+}
+.juan{
+    width: 100px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+header{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    background-color: antiquewhite;
+}
+.logo{
+    height: 30px;
+    width: 50px;
+    margin-right: 50%;
+
+  
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 15px;
+    justify-content: space-between;
+}
+nav div {
+    width: 30px;
+    height: 30px;
+}
+.home-icon{
+    background-color: aqua;
+}
+.search-icon{
+    background-color: brown;
+}
+.contact-icon{
+    background-color: blueviolet;
+}
+.welcome{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.header--button{
+    margin-top: 10px;
+}
