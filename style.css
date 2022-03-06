@@ -1,9 +1,15 @@
 :root{
     --color-white: #fff;
-    --color-green-dark: rgba (30, 130, 76);, 1);
-    --color-orange: rgba(255, 165,0, 1);
-    --color-orange-soft:  rgba(255, 165,0, 0.5);
-}
+    --color-green-dark: rgb(0, 90, 49);
+    --color-green-light: rgb(0, 112, 61);
+    --color-green-light-soft: rgba(0, 112, 61,0.5);
+    --color-orange-light: rgb(255, 140, 1);
+    --color-orange-light-soft: rgba(255, 140, 1,0.5);
+    --color-orange-dark: rgb(255, 107, 24);
+    --color-brown-light:rgb(153, 51, 0);
+    --color-brown-dark: rgb(109, 48, 18);
+}   
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,16 +18,16 @@
 html{
     font-size: 62.5%;
     font-family:'Montserrat', sans-serif;
-
 }
 
 header{
     justify-content: space-between;
-    position: relative;
+    position: fixed;
     width: 100%;
     min-width: 320px;
-    height: 334px;
-    background-color: antiquewhite;
+    height: auto;
+    background-color: var(--color-orange-light);
+    z-index: 1;
 }
 .top-bar{
     display: flex;
@@ -43,7 +49,8 @@ nav{
     cursor: pointer;
     width: auto;
     height: auto;
-    z-index: 1;
+    background-color: papayawhip;
+    border-radius: 15px;
 }
 .nav-links li{
     display: inline-block;
@@ -51,31 +58,43 @@ nav{
     cursor:pointer;
 
 }
-button:hover{
-    background-color: var(--color-orange-soft);
-}
+
 nav img{
     margin-top: 15px; 
     width: 35px;
      height: 35px;
+    
  }
  nav img:hover{
     transition: all 0.3s ease;
     width: 40px;
     height: 40px;
+    border-radius: 15px;
+    background-color: var(--color-green-light);
+    padding: 6px;
  }
  #icon2 a{
      text-align: center;
      margin-bottom: 0;
  }
+#notification {
+    background-color: var(--color-green-dark);
+    border-radius: 100px;
+    padding: 5px;
+    width: 5px;
+    height: 3px;
+    color: #fff;
+    border: black;
 
+}
  .welcome{
+    margin-left: 75px;
     width: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 1.6rem;
 }
 .wrapper{
@@ -96,29 +115,107 @@ nav img{
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
     transform-style: preserve-3d;
     z-index: -1;
 }
-.background,.foreground{
+/* .background,.foreground{
     position: absolute;
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: -1;
 
-}
+} */
 .background{
     transform: translateZ(-10px)scale(2);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 .foreground{
     transform: translateZ(-5px)scale(1.5);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 .wrapper img{
     width: 100%;
 }
 
 #summer-text{
-    font-size: 1.6rem;
+    font-size: 2.6rem;
     background-color: rgb(54, 54, 54);
     color: #fff;
+    position:absolute;
+}
+.section--summer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./imag/mountain-spring-photo.jpeg);
+    height: 600px;
+    width: 100%;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+}
+.summer-background{
+width: 100%;
+height: auto;
+z-index: -5;
+}
+
+
+.section--summer h2{
+    font-size: 5rem;
+    color: #fff;
+    text-shadow: 0 0 5px black;;
+    justify-content: center;
+    padding-top: 40px;
+    text-justify: center;
+}
+.section--summer p{
+    font-size: 2rem;
+    color: #fff;
+    /* background-color: rgba(122, 121, 121, 0.7); */
+    background-color: var(--color-orange-dark);
+    text-shadow: 0 0 5px black;;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.section--summer ul{
+    font-size: 2.8rem;
+    color: black;
+    background-color: var(--color-green-dark);
+    width:fit-content;
+    text-shadow: 0 0 5px white;;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 20px;
+    list-style: none;
+}
+.rest-page{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: auto;
+    gap: 15px;
+    padding: 15px;
 }
