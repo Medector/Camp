@@ -6,8 +6,10 @@
     --color-orange-light: rgb(255, 140, 1);
     --color-orange-light-soft: rgba(255, 140, 1,0.5);
     --color-orange-dark: rgb(255, 107, 24);
+    --color-orange-dark-soft: rgba(255, 107, 24,.9);
     --color-brown-light:rgb(153, 51, 0);
     --color-brown-dark: rgb(109, 48, 18);
+    --color-brown-dark-soft: rgba(109, 48, 18,0.5);
 }   
 
 *{
@@ -19,13 +21,12 @@ html{
     font-size: 62.5%;
     font-family:'Montserrat', sans-serif;
 }
-
 header{
     justify-content: space-between;
     position: fixed;
     width: 100%;
     min-width: 320px;
-    height: auto;
+    height: 50px;
     background-color: var(--color-orange-light);
     z-index: 1;
 }
@@ -33,13 +34,17 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-
-
+    background-color: var(--color-orange-light);
+}
+.top-bar h1{
+    width: 100%;
+    font-size: 2rem;
+    justify-content: center;
 }
 nav{
     display: flex;
     width: auto;
-    height: 50px;
+    height: 65px;
     justify-content: space-between;
     align-items: flex-end;
     flex-direction: column;
@@ -47,10 +52,12 @@ nav{
 }
 .logo{
     cursor: pointer;
-    width: auto;
-    height: auto;
+    width: 50px;
+    height: 50px;
     background-color: papayawhip;
     border-radius: 15px;
+ margin-top: 8px;
+ margin-left: 10px;
 }
 .nav-links li{
     display: inline-block;
@@ -58,43 +65,37 @@ nav{
     cursor:pointer;
 
 }
-
-nav img{
-    margin-top: 15px; 
+nav ul{
+    display: none;
+}
+#menu{
     width: 35px;
-     height: 35px;
-    
- }
- nav img:hover{
+    height: 35px;
+    margin-top: 10px; 
+     margin-right: 25px;
+     background-color: var(--color-orange-dark-soft);
+     border-radius: 10px;
+}
+ /* #menu:hover{
     transition: all 0.3s ease;
     width: 40px;
     height: 40px;
     border-radius: 15px;
     background-color: var(--color-green-light);
     padding: 6px;
- }
- #icon2 a{
+ } */
+ /* #icon2 a{
      text-align: center;
      margin-bottom: 0;
- }
-#notification {
-    background-color: var(--color-green-dark);
-    border-radius: 100px;
-    padding: 5px;
-    width: 5px;
-    height: 3px;
-    color: #fff;
-    border: black;
+ } */
 
-}
  .welcome{
-    margin-left: 75px;
     width: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 0px;
+    margin-left: 30%;
     font-size: 1.6rem;
 }
 .wrapper{
@@ -133,6 +134,7 @@ nav img{
     height: 100vh;
     width: 100%;
     object-fit: cover;
+    margin-top: 90px;
     z-index: -1;
 }
 .foreground{
@@ -143,6 +145,7 @@ nav img{
     object-fit: cover;
     z-index: -1;
 }
+
 .wrapper img{
     width: 100%;
 }
@@ -208,19 +211,21 @@ z-index: -5;
 .rest-page{
     width: 100%;
     height: auto;
-    background-color: var(--color-brown-dark);
+    /* background-color: var(--color-brown-light); */
 }
 .weather-bar{
     height: 30px;
+    
 }
 .weather-bar-box {
     width: 90%;
     height: 80px;
     margin: auto;
     position: absolute;
-    top: 790px;
+    top: 100vh;
     left: 20px;
-    background-color: var(--color-brown-light);
+    background-image: url(./imag/sky.jpeg);
+    /* background-color: var(--color-orange-dark); */
     border-radius: 30px;
     box-shadow: 0 0 5px black;
     z-index: 6;
@@ -240,14 +245,29 @@ z-index: -5;
     font-size: 5rem;
 }
 .weather-bar-box h3{font-size: 2rem;}
-.cards{
+/* .cards{
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 400px 400px;
+    grid-template-columns: minmax(50px, 600px) minmax(50px, 600px);
+    grid-template-columns:repeat(2,minmax(150px,600px));
     gap: 15px;
-    margin: 10px;
-    margin-top: 10px;
+    grid-auto-flow: row;
+    margin: auto;
+    margin-top: 80px;
     z-index: 2;
+} */
+.cards{
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, 400px);
+    grid-template-columns:minmax(300px,500px);
+    margin-right: 50px;
+    justify-content: center;
+    margin-top: 80px;
+    gap: 15px;
+    background-color: #fff;
+    grid-row-gap:30px;
+
 }
 .card{
     display: grid;
@@ -256,15 +276,22 @@ z-index: -5;
     position: relative;
     grid-auto-flow: column;
     box-shadow: 0 0 5px black;
+    max-width: 400px;
+    justify-content: center;
+    align-self: auto;
+
 }
 
 .card h3{
 grid-area: 1/2/1/3;
 z-index: 5;
-font-size: 2rem;
-color: black;
-text-shadow: 0 0 5px white;
+font-size: 3rem;
+color: white;
+text-shadow: 0 0 5px black;
 margin: auto;
+background-color: rgba(20, 20, 20, 0.5);
+border-radius: 15PX;
+padding: 10PX;
 }
 .card img{
     grid-area: 1/1/4/4;
@@ -295,4 +322,107 @@ margin: auto;
     transition: all 0.3s ease 0s;
     background-color: var(--color-green-light);
     float: right;
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: var(--color-brown-light); */
+    margin-top: 30px;
+    padding-top: 30px;
+    background-color: var(--color-green-dark);
+    padding: 10px;
+}
+footer ul{
+    list-style: none;
+    line-height: 30px;
+}
+.language a{
+    font-size: 2.0rem;
+    line-height: 20px;
+}
+.language a:hover{
+    font-size: 2.6rem;
+    transition: cubic-bezier();
+}
+.about-us{
+    margin:0 20px ;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 10px;
+    
+}
+footer a:link{
+    color:#fff;
+}
+
+footer a:hover{
+    color: var(--color-brown-dark);
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 873px){
+   
+ .welcome{
+     margin-left: 85px;
+ }  
+    nav ul{
+        display: block;
+    }
+    nav img{
+        margin-top: 10px; 
+        width: 35px;
+         height: 35px;
+     }
+#menu{
+         display:none;
+     }
+nav img:hover{
+        transition: all 0.3s ease;
+        width: 40px;
+        height: 40px;
+        border-radius: 15px;
+        background-color: var(--color-green-light);
+        padding: 6px;
+     }
+#notification {
+        background-color: var(--color-green-dark);
+        border-radius: 100px;
+        padding: 5px;
+        width: 5px;
+        height: 3px;
+        color: #fff;
+        border: black;
+    
+    }
+#icon2 a{
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+.cards{
+    grid-template-rows: repeat(2,400px);
+    grid-template-columns: repeat(2,400px);
+    column-gap: 30px;
+
+}
+.cards{
+    margin-top: 40px;
+    padding-top: 25px;
+}
+.weather-bar-box{
+    margin-left: 30px;
+}
+
+}
+
+
+@media screen and (min-width: 2000px){
+.cards{
+    grid-template-rows: 600px;
+    grid-template-columns: repeat(4,450px);
+}
+
 }
