@@ -261,12 +261,11 @@ z-index: -5;
     display: grid;
     grid-template-rows: repeat(4, 400px);
     grid-template-columns:minmax(300px,500px);
-    margin-right: 50px;
-    justify-content: center;
-    margin-top: 80px;
     gap: 15px;
     background-color: #fff;
     grid-row-gap:30px;
+    justify-items: center;
+    
 
 }
 .card{
